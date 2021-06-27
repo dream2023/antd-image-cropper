@@ -1,10 +1,8 @@
 import React, { FC, useCallback, useRef, useState } from 'react'
-import { Modal } from 'antd'
-import ReactCrop from 'react-image-crop'
+import { Modal, UploadProps } from 'antd'
+import ReactCrop, { Crop } from 'react-image-crop'
 
-import type { UploadProps } from 'antd'
-import type { Crop } from 'react-image-crop'
-import type { RcFile } from 'antd/lib/upload/interface'
+import { RcFile } from 'antd/lib/upload/interface'
 
 import 'react-image-crop/dist/ReactCrop.css'
 import './index.css'
