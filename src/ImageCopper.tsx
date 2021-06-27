@@ -13,6 +13,12 @@ const noop = (...args: any[]) => {}
 
 export interface ImageCropperProps {
   /**
+   * 是否开启裁剪
+   *
+   * @default true
+   */
+  crop?: boolean;
+  /**
    * 裁切区域宽高比，width / height
    */
   aspect?: number
@@ -86,6 +92,7 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
     quality,
     circularCrop,
     aspect,
+    crop: isCrop = true,
     cropHeight,
     cropWidth,
     modalTitle,
@@ -237,6 +244,9 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
     },
     [onClose, quality],
   )
+
+  // 不开启裁剪
+  if (!isCrop) return <>{children}</>
 
   return (
     <>

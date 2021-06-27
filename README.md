@@ -38,6 +38,7 @@ const Demo = () => (
 
 | 属性         | 类型                 | 默认         | 说明                             |
 | ------------ | -------------------- | ------------ | -------------------------------- |
+| crop       | `boolean`             | `true`            | 是否开启裁剪|
 | aspect       | `number`             | -            | 裁切区域宽高比，`width / height` |
 | cropWidth    | `number`             | -            | 裁剪宽度                         |
 | cropHeight   | `number`             | -            | 裁剪高度                         |
