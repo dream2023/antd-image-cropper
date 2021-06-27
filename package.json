@@ -1,0 +1,61 @@
+{
+  "private": false,
+  "name": "antd-image-cropper",
+  "description": "Another image cropper for Ant Design Upload",
+  "license": "MIT",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "prepublishOnly": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "antd",
+    "ant-design",
+    "upload",
+    "image",
+    "crop",
+    "cropper",
+    "image-cropper"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "author": "dream2023 <1098626505@qq.com> (https://github.com/dream2023)",
+  "homepage": "https://github.com/dream2023/antd-image-cropper",
+  "repository": "https://dream2023.github.io/antd-image-cropper",
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "peerDependencies": {
+    "antd": "4.x",
+    "react": "^16.8.6 || ^17.0"
+  },
+  "dependencies": {
+    "@types/react-image-crop": "^8.1.2",
+    "react-image-crop": "^8.6.12"
+  },
+  "devDependencies": {
+    "react": "^16.12.0",
+    "@umijs/plugin-antd": "^0.10.0",
+    "dumi": "^1.0.14",
+    "father-build": "^1.17.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1"
+  }
+}
