@@ -36,7 +36,7 @@ const Demo = () => {
   }
 
   return (
-    <ImageCropper aspect={16 / 9}>
+    <ImageCropper aspectRatio={16 / 9}>
       <Upload
         action="https://www.fastmock.site/mock/32d872e565fbab87ba76057c18f7f8e0/api/upload"
         listType="picture-card"

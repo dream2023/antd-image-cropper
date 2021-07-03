@@ -3,7 +3,7 @@
   "name": "antd-image-cropper",
   "description": "Another image cropper for Ant Design Upload",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "files": [
     "dist"
   ],

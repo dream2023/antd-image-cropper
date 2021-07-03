@@ -20,11 +20,11 @@ yarn add antd-image-cropper
 
 ### 裁剪比例
 
-<code src="./demos/aspect.jsx" />
+<code src="./demos/aspectRatio.jsx" />
 
 ### 裁剪区域
 
-> `cropWidth` 和 `cropHeight` 必须同时制定方可生效，且不能和 `aspect` 一起使用。
+> `cropWidth` 和 `cropHeight` 必须同时制定方可生效，且不能和 `aspectRatio` 一起使用。
 
 <code src="./demos/area.jsx" />
 
@@ -49,7 +49,7 @@ yarn add antd-image-cropper
 | 属性         | 类型                 | 默认         | 说明                             |
 | ------------ | -------------------- | ------------ | -------------------------------- |
 | crop       | `boolean`             | `true`            | 是否开启裁剪|
-| aspect       | `number`             | -            | 裁切区域宽高比，`width / height` |
+| aspectRatio       | `number`             | -            | 裁切区域宽高比，`width / height` |
 | cropWidth    | `number`             | -            | 裁剪宽度                         |
 | cropHeight   | `number`             | -            | 裁剪高度                         |
 | minWidth     | `number`             | -            | 裁剪区域最小宽度                 |

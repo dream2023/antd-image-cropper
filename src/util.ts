@@ -2,7 +2,7 @@ import type { Crop } from 'react-image-crop'
 
 interface GetCropCenterOptions {
   img: HTMLImageElement
-  aspect?: number
+  aspectRatio?: number
   cropWidth?: number
   cropHeight?: number
   maxWidth?: number
@@ -11,7 +11,7 @@ interface GetCropCenterOptions {
 
 // 获取裁剪区域的中央
 export function getCropCenter(options: GetCropCenterOptions) {
-  const { img, aspect, cropWidth, cropHeight, maxHeight, maxWidth } = options
+  const { img, aspectRatio, cropWidth, cropHeight, maxHeight, maxWidth } = options
   const { width: imageWidth, height: imageHeight } = img
 
   // 最大百分比
@@ -23,16 +23,16 @@ export function getCropCenter(options: GetCropCenterOptions) {
     // 固定裁剪宽高
     widthPercent = imageWidth < cropWidth ? 100 : 50
     heightPercent = imageWidth < cropHeight ? 100 : 50
-  } else if (aspect) {
+  } else if (aspectRatio) {
     // 比例裁剪
     widthPercent =
-      imageWidth / aspect < imageHeight * aspect
+      imageWidth / aspectRatio < imageHeight * aspectRatio
         ? 100
-        : ((imageHeight * aspect) / imageWidth) * 100
+      : ((imageHeight * aspectRatio) / imageWidth) * 100
     heightPercent =
-      imageWidth / aspect > imageHeight * aspect
+      imageWidth / aspectRatio > imageHeight * aspectRatio
         ? 100
-        : (imageWidth / aspect / imageHeight) * 100
+      : (imageWidth / aspectRatio / imageHeight) * 100
   } else {
     // 默认百分百
     widthPercent = 100

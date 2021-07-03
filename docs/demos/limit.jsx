@@ -37,7 +37,7 @@ const Demo = () => {
 
   return (
     <ImageCropper
-      aspect={16 / 9}
+      aspectRatio={16 / 9}
       minWidth={100}
       maxWidth={600}
       minHeight={150}

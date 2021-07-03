@@ -21,7 +21,7 @@ export interface ImageCropperProps {
   /**
    * 裁切区域宽高比，width / height
    */
-  aspect?: number
+  aspectRatio?: number
   /**
    * 裁剪宽度
    */
@@ -91,7 +91,7 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
     grid,
     quality,
     circularCrop,
-    aspect,
+    aspectRatio,
     crop: isCrop = true,
     cropHeight,
     cropWidth,
@@ -111,7 +111,7 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
     unit: '%',
     x: 0,
     y: 0,
-    aspect: undefined,
+    aspect: aspectRatio,
     width: 100,
     height: 100,
   })
@@ -169,14 +169,14 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
     // 居中裁剪区域
     setCrop({
       unit: '%',
-      aspect,
+      aspect: aspectRatio,
       ...getCropCenter({
         img,
         cropHeight,
         cropWidth,
         maxHeight,
         maxWidth,
-        aspect,
+        aspectRatio,
       }),
     })
 
