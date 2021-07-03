@@ -71,6 +71,15 @@ export function getCroppedCanvas(image: HTMLImageElement, crop: Crop) {
 
   if (!ctx || !crop.width || !crop.height) return null
 
+  // 发现有无误差，需要抹平
+  if (crop.aspect && (crop.width / crop.height - crop.aspect > 0.00001)) {
+    if (crop.height * crop.aspect < 100) {
+      crop.width = crop.height * crop.aspect
+    } else {
+      crop.height = crop.width / crop.aspect
+    }
+  }
+
   canvas.width = (crop.width / 100) * image.width * pixelRatio
   canvas.height = (crop.height / 100) * image.height * pixelRatio
   ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)

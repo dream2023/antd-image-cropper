@@ -278,7 +278,7 @@ export const ImageCropper: FC<ImageCropperProps> = (props) => {
               ruleOfThirds={grid}
               circularCrop={circularCrop}
               onImageLoaded={onImageLoaded}
-              locked={!!(cropWidth && cropHeight)}
+              locked={Boolean(cropWidth || cropHeight)}
               onChange={(c, percentCrop) => {
                 setCrop(percentCrop)
               }}
